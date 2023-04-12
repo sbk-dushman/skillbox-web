@@ -131,19 +131,12 @@ $(document).ready(function(){
 			},
 			submitHandler(form) {
 				let th = $(form);
-
-				$.ajax({
-					type: 'POST',
-					url: '/php/api.php',
-					data: th.serialize(),
-					// eslint-disable-next-line func-names
-				}).done(() => {
-					th.trigger('reset');
+				th.trigger('reset');
 					$('body').removeClass('is-pop-up-open').removeAttr('data-scroll');
 					$('.popup-container').fadeOut("slow");
 					console.log('Отправлено')
-				});
-	// return false;
+				
+	return true;
 		}
 			
 		});
